@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="./favicon.ico" />
+    <title>Brewery of Milwaukee</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Patua+One&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link href="../src/main.css" rel="stylesheet" />
+    <script src="../src/main.js" type="module"></script>
+  </head>
+  <body>
+    <template id="brewery-template">
+      <li class="brewery-item">
+        <div class="brewery-item-group">
+          <h4 class="brewery-name"></h4>
+          <p class="brewery-type"></p>
+        </div>
+        <div class="brewery-item-group">
+          <img class="brewery-street-icon" />
+          <p class="brewery-street"></p>
+        </div>
+        <div class="brewery-item-group">
+          <img class="brewery-phone-icon" />
+          <a class="brewery-phone"></a>
+        </div>
+        <a class="brewery-website"></a>
+      </li>
+    </template>
+
+    <div id="app">
+      <header>
+        <div class="header-container">
+          <div class="logo-container ">
+            <h1 class="logo-text">Milwaukee Breweries</h1>
+            <img src="../src/assets/beer.png" alt="logo" class="logo-img animate__animated animate__bounceInDown animate__delay-1s"/>          </div>
+        </div>
+      </header>
+
+      <div class="center-content">
+        <form id="brewery-dropdown-form">
+          <label for="brewery-dropdown">Sort by brewery type:</label>
+          <select name="brewery-dropdown" id="brewery-dropdown"></select>
+        </form>
+      </div>
+
+      <section class="center-content">
+        <ul class="brewery-list"></ul>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,220 @@
+/* 
+==============
+Variables
+==============
+*/
+:root {
+  /* colors palette*/
+  --clr-scheme-1: #ffbc00;
+  /* colors background*/
+  --clr-bg-1: rgb(255, 255, 255);
+  --clr-bg-2: rgb(248, 248, 248);
+  /* colors fonts*/
+  --clr-font-1: rgb(41, 41, 41);
+  --clr-font-2: rgb(134, 134, 134);
+  /* colors other */
+  --clr-border: rgb(230, 230, 230);
+  /* spacing */
+  --spacing: 0.1rem;
+  /* decoration & animation */
+  --transition: all 0.3s ease-in-out;
+  --radius: 30px;
+}
+/* 
+==============
+Global styles
+==============
+*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  color: var(--clr-font-1);
+  min-width: 320px;
+}
+ul,
+ol {
+  list-style-position: inside;
+  line-height: 1.2;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  transition: var(--transition);
+  color: var(--clr-scheme-1);
+}
+a:hover {
+  color: var(--clr-font-2);
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+}
+h1 {
+  font-size: 3rem;
+  font-family: "Patua One", cursive;
+}
+button {
+  cursor: pointer;
+  border: none;
+}
+header {
+  background-color: var(--clr-scheme-1);
+}
+.center-content {
+  width: 90vw;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* 
+==============
+Header elements
+==============
+*/
+.header-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  
+}
+.header-container::before {
+  content: "";
+  background-image: url("./assets/bkg.jpg");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.09;
+}
+.logo-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.logo-text {
+  padding: 10rem 0;
+}
+.logo-img {
+  width: 60px;
+}
+/* 
+==============
+Dropdown
+==============
+*/
+#brewery-dropdown-form {
+  margin-top: 50px;
+}
+.brewery-type {
+  display: inline-block;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  padding: 2px 8px;
+  color: var(--clr-bg-1);
+  font-weight: 500;
+  letter-spacing: var(--spacing);
+  margin: 5px 0;
+}
+#brewery-dropdown-form,
+#brewery-dropdown {
+  font-size: 1.2rem;
+}
+#brewery-dropdown-form > label {
+  font-weight: 500;
+}
+#brewery-dropdown {
+  margin-left: 5px;
+  padding: 5px 8px;
+  background: var(--clr-bg-2);
+  border-radius: 8px;
+}
+
+/* 
+==============
+Brewery item
+==============
+*/
+.brewery-list {
+  margin: 50px 0;
+  width: 100%;
+}
+
+.brewery-item {
+  background-color: var(--clr-bg-1);
+  padding: 40px;
+  border-bottom-right-radius: var(--radius);
+  transition: var(--transition);
+  transform: scale(1);
+  border-left: 1px solid var(--clr-border);
+  border-right: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+  min-width: 300px;
+  height: auto;
+  margin-bottom: 16px;
+}
+.brewery-item:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  transform: scale(1.1);
+  z-index: 999;
+}
+.brewery-item .brewery-item-group,
+.brewery-item > p {
+  margin-bottom: 10px;
+}
+.brewery-item-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brewery-phone {
+  color: inherit;
+}
+.brewery-phone:hover {
+  color: var(--clr-scheme-1);
+}
+.brewery-phone-icon {
+  width: 15px;
+}
+.brewery-street-icon {
+  width: 18px;
+}
+.brewery-street-icon,
+.brewery-phone-icon {
+  opacity: 0.6;
+}
+
+/* 
+==============
+Media Queries
+==============
+*/
+@media screen and (min-width: 804px) {
+  .brewery-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+  }
+  .brewery-item {
+    margin-bottom: 0 !important;
+  }
+}
+@media screen and (min-width: 1120px) {
+  .brewery-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
