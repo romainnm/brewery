@@ -89,7 +89,7 @@ Header elements
 }
 .header-container::before {
   content: "";
-  background-image: url("./assets/bkg.jpg");
+  /* background-image: url("./assets/bkg.jpg"); */
   background-size: cover;
   background-position: center;
   position: absolute;
